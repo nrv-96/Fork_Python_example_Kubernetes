@@ -1,0 +1,27 @@
+vVpcConfig:
+  vpccidr: 10.99.112.0/20
+  privatesubnetaz1: 10.99.112.0/22
+  privatesubnetaz2: 10.99.116.0/22
+  privatesubnetaz3: 10.99.120.0/22
+  publicsubnetaz1: 10.99.126.128/25
+  publicsubnetaz2: 10.99.127.0/25
+  publicsubnetaz3: 10.99.127.128/25
+  protectedsubnetaz1: 10.99.124.0/24
+  protectedsubnetaz2: 10.99.125.0/24
+  protectedsubnetaz3: 10.99.126.0/25
+  internalVpcCidrBlock: 100.64.0.0/16
+  internalSubAz1: 100.64.64.0/18
+  internalSubAz2: 100.64.128.0/18
+  internalSubAz3: 100.64.192.0/18
+  internalDataSubAz1: 100.64.0.0/20
+  internalDataSubAz2: 100.64.16.0/20
+  internalDataSubAz3: 100.64.32.0/19
+  configureDirectConnect: false
+
+vVpcEndpoints:
+  Interface:
+    - ec2
+    - execute-api
+  Gateway:
+    - s3
+  AllowOnPremNetwork: 'False'

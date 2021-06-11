@@ -1,0 +1,2 @@
+# Python dependencies needed for lambda function
+# ccplatlogging>=1.0<2.0

@@ -1,0 +1,48 @@
+##  Account REGIONAL values which will change once per account and once per region should be 'hardcoded' here.
+##  Values which need to change from one environment to another, should be abstracted to the appropriate .env file.
+
+namespace: ${namespace}
+cfngin_bucket: ${cfngin_bucket_name}
+sys_path: ./
+
+common_parameters: &common_parameters
+  pEnvName: ${environment}
+  pRegion: ${region}
+  pDepartment: ${department}
+
+tags:
+  "SWA:BusinessService": ${business_service}
+  "SWA:Compliance": ${compliance}
+  "SWA:Confidentiality": ${confidentiality}
+  "SWA:CostCenter": ${cost_center}
+  "SWA:Environment": ${environment}
+  "SWA:Name": ${department}
+  "SWA:PID": ${swa_pid}
+  "CCPModuleName": ${module_name}
+  "CCPModuleVersion": ${module_version}
+  "CCPNamespace": ${namespace}
+
+pre_build:
+  - path: libs.hooks.ccplat_pre_build.hook
+    required: true
+    args:
+      validateVpc: true # set to false if not using a vpc
+
+pre_destroy:
+  - path: libs.hooks.ccplat_pre_destroy.hook
+    required: true
+
+stacks:
+  # TO DO: add stacks for module
+
+  # added for testing lambda uploader
+  hello-test2:
+    template_path: lambdas/hello/hello.output
+
+# post_build:
+#   - path: libs.hooks.ccplat_post_build.hook
+#     required: true
+
+post_destroy:
+  - path: libs.hooks.ccplat_post_destroy.hook
+    required: true

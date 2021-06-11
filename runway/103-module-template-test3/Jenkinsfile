@@ -1,0 +1,11 @@
+library identifier: 'shareable-pipelines@master', retriever: modernSCM(
+    [$class: 'GitSCMSource',
+        remote: 'https://stash1-tools.swacorp.com/scm/ccplat/shareable-pipelines.git'
+    ])
+
+// Contributors must define their Group ID here. Ex: idf, otis, crew, etc...
+def config = [
+    groupId: 'cloudCatalog'
+]
+
+moduleBuild(config)

@@ -1,0 +1,1 @@
+This folder holds dependency-check data when execute `docker-compose run dependency-check` but contents won't be tracked in git.

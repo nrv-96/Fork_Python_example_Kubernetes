@@ -1,0 +1,5 @@
+modules:
+  000-vpc:
+    groupId: cloudCatalog
+    name: cloud-common-vpc-module
+    version: 2.13.0

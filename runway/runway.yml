@@ -1,0 +1,35 @@
+---
+deployments:
+- modules:
+  - parallel:
+    - name: 101-module-template-test1
+      path: 101-module-template-test1
+      tags:
+      - 00-main
+    - name: 102-module-template-test2
+      path: 102-module-template-test2
+      tags:
+      - 00-main
+    - name: 103-module-template-test3
+      path: 103-module-template-test3
+      tags:
+      - 00-main
+    - name: 104-module-template-test4
+      path: 104-module-template-test4
+      tags:
+      - 00-main
+    - name: 108-module-template
+      path: 108-module-template
+      tags:
+      - 00-main
+    - name: 105-module-template-test5
+      path: 105-module-template-test5
+      tags:
+      - 00-main
+    - name: 106-module-template-test6
+      path: 106-module-template-test6
+      tags:
+      - 00-main
+  name: 00-main
+  regions:
+  - us-east-1
